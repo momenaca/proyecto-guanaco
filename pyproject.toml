@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "guanaco"
+version = "0.1.0"
+description = ""
+authors = ["momenaca & jalvarez"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+mkdocs = "^1.5.3"
+pytest = "^8.1.1"
+pytest-cov = "^4.1.0"
+pre-commit = "^3.6.2"
+poetry = "^1.8.2"
+mkdocstrings = "^0.24.1"
+mkdocs-material = "^9.5.13"
+mkdocs-minify-plugin = "^0.8.0"
+mkdocs-jupyter = "^0.24.6"
+mkdocstrings-python = "^1.9.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+combine_as_imports = true
+
+[tool.pycln]
+all = true
+
+[tool.mypy]
+exclude = [
+    '^tests',
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = [
+    'tests',
+]
